@@ -1,1 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFA Module UI Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 flex h-screen overflow-hidden">
 
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col justify-between shrink-0">
+        <div>
+            <!-- Brand Logo -->
+            <div class="h-16 flex items-center px-6 border-b border-slate-800 gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/30">
+                    S
+                </div>
+                <div>
+                    <h1 class="font-bold text-slate-100 text-sm leading-tight">CRM / SFA+ DMS</h1>
+                    <span class="text-[10px] text-indigo-400 font-semibold uppercase tracking-wider">Enterprise v2.1</span>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="p-4 space-y-1">
+                <div class="px-3 py-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Modules</div>
+                
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-cubes text-slate-500 w-5"></i>
+                    <span>0. Core / Platform</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 shadow-sm">
+                    <i class="fa-solid fa-route text-indigo-400 w-5"></i>
+                    <span>1. SFA Module</span>
+                    <span class="ml-auto bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-0.5 rounded-full font-bold">31 Tables</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-truck-ramp-box text-slate-500 w-5"></i>
+                    <span>2. DMS Module</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-boxes-packing text-slate-500 w-5"></i>
+                    <span>3. Product & Pricing</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-store text-slate-500 w-5"></i>
+                    <span>4. Retail Execution</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-user-gear text-slate-500 w-5"></i>
+                    <span>5. Promoter / BA</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-chart-pie text-slate-500 w-5"></i>
+                    <span>9. Analytics & AI</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- User Profile Card -->
+        <div class="p-4 border-t border-slate-800">
+            <div class="flex items-center gap-3 p-2 bg-slate-900/50 rounded-lg border border-slate-800">
+                <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center font-bold text-slate-300 border border-slate-600">
+                    RK
+                </div>
+                <div class="overflow-hidden">
+                    <p class="text-xs font-semibold text-slate-200 truncate">Rahul Kumar</p>
+                    <p class="text-[11px] text-slate-500 truncate">Area Sales Officer (SO)</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-slate-900">
+        
+        <!-- Header -->
+        <header class="h-16 border-b border-slate-800 px-8 flex items-center justify-between bg-slate-950/50 shrink-0">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-route text-indigo-400"></i> Field Sales Automation (SFA)
+                </h2>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Offline Sync Ready
+                </span>
+            </div>
+
+            <!-- Top Search & Actions -->
+            <div class="flex items-center gap-4">
+                <div class="relative w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                    <input type="text" placeholder="Search Outlets, Beats, SKU..." class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-9 pr-4 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+                </div>
+                <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-2 shadow-lg shadow-indigo-600/20 transition">
+                    <i class="fa-solid fa-plus"></i> New Visit / Order
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Section -->
+        <main class="flex-1 flex flex-col min-h-0">
+            
+            <!-- Tab Navigation Bar -->
+            <div class="border-b border-slate-800 px-8 bg-slate-950/30 flex items-center justify-between shrink-0">
+                <div class="flex gap-1" id="tabContainer">
+                    <button onclick="switchTab('outlets')" id="tab-outlets" class="tab-btn active border-b-2 border-indigo-500 text-indigo-400 font-semibold px-4 py-3.5 text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-store"></i> Outlet Directory & Geofence
+                    </button>
+                    <button onclick="switchTab('beat')" id="tab-beat" class="tab-btn text-slate-400 hover:text-slate-200 font-medium px-4 py-3.5 text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-map-location-dot"></i> Beat Planning & Journey
+                    </button>
+                    <button onclick="switchTab('visit')" id="tab-visit" class="tab-btn text-slate-400 hover:text-slate-200 font-medium px-4 py-3.5 text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-clipboard-check"></i> In-Store Visit & Order Wizard
+                    </button>
+                    <button onclick="switchTab('attendance')" id="tab-attendance" class="tab-btn text-slate-400 hover:text-slate-200 font-medium px-4 py-3.5 text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-user-clock"></i> Attendance & GPS Punch
+                    </button>
+                </div>
+
+                <div class="text-xs text-slate-400 flex items-center gap-3">
+                    <span>Beat: <strong class="text-slate-200">Connaught Place Route-A</strong></span>
+                    <span class="text-slate-700">|</span>
+                    <span>Date: <strong class="text-slate-200">12 Nov 2026</strong></span>
+                </div>
+            </div>
+
+            <!-- Tab Panels Content Container -->
+            <div class="flex-1 min-h-0 overflow-y-auto p-8 custom-scrollbar">
+
+                <!-- TAB 1: OUTLET DIRECTORY & GEOFENCE -->
+                <div id="panel-outlets" class="tab-panel space-y-6">
+                    <!-- Filters & Overview Cards -->
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+                            <span class="text-slate-500 text-xs font-medium uppercase">Total Mapped Outlets</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span class="text-2xl font-bold text-slate-100">142</span>
+                                <span class="text-xs text-emerald-400 font-semibold"><i class="fa-solid fa-arrow-up"></i> +12 this month</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+                            <span class="text-slate-500 text-xs font-medium uppercase">Geofence Verified</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span class="text-2xl font-bold text-emerald-400">128</span>
+                                <span class="text-xs text-slate-400">90.1% Coverage</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+                            <span class="text-slate-500 text-xs font-medium uppercase">Active GT Outlets</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span class="text-2xl font-bold text-slate-100">98</span>
+                                <span class="text-xs text-indigo-400 font-semibold">General Trade</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+                            <span class="text-slate-500 text-xs font-medium uppercase">Pending Approvals</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span class="text-2xl font-bold text-amber-400">5</span>
+                                <span class="text-xs text-amber-400/80 font-medium">KYC Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Split View: Table & Geofence Map -->
+                    <div class="grid grid-cols-12 gap-6">
+                        <!-- Outlet List Table -->
+                        <div class="col-span-7 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden flex flex-col">
+                            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                                <h3 class="font-bold text-sm text-slate-200">Outlet Master Table</h3>
+                                <div class="flex gap-2">
+                                    <button class="px-2.5 py-1 bg-slate-900 border border-slate-700 rounded text-xs text-slate-300">Filter GT/MT</button>
+                                    <button class="px-2.5 py-1 bg-slate-900 border border-slate-700 rounded text-xs text-slate-300">Sort by Visit</button>
+                                </div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-slate-300">
+                                    <thead class="bg-slate-900/60 text-slate-400 border-b border-slate-800 uppercase font-semibold">
+                                        <tr>
+                                            <th class="px-4 py-3">Outlet Code & Name</th>
+                                            <th class="px-4 py-3">Channel</th>
+                                            <th class="px-4 py-3">Last Visit</th>
+                                            <th class="px-4 py-3">Geofence</th>
+                                            <th class="px-4 py-3 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-800/60">
+                                        <tr class="hover:bg-slate-900/40 cursor-pointer" onclick="selectOutlet('OUT-8801', 'Nykaa Beauty Store', '50m Verified')">
+                                            <td class="px-4 py-3 font-medium">
+                                                <div class="text-slate-100 font-semibold">Nykaa Beauty Store</div>
+                                                <div class="text-[10px] text-slate-500">OUT-8801 • CP Block-B</div>
+                                            </td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium text-[10px]">MT - Modern</span></td>
+                                            <td class="px-4 py-3 text-slate-400">10 Nov 2026</td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px]"><i class="fa-solid fa-location-dot"></i> 50m Radius</span></td>
+                                            <td class="px-4 py-3 text-right"><button class="text-indigo-400 hover:text-indigo-300 font-medium">View</button></td>
+                                        </tr>
+                                        <tr class="hover:bg-slate-900/40 cursor-pointer" onclick="selectOutlet('OUT-4210', 'Gupta Cosmetics & General', 'Geofence Pending')">
+                                            <td class="px-4 py-3 font-medium">
+                                                <div class="text-slate-100 font-semibold">Gupta Cosmetics</div>
+                                                <div class="text-[10px] text-slate-500">OUT-4210 • Janpath Market</div>
+                                            </td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 font-medium text-[10px]">GT - General</span></td>
+                                            <td class="px-4 py-3 text-slate-400">08 Nov 2026</td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px]"><i class="fa-solid fa-triangle-exclamation"></i> Not Fixed</span></td>
+                                            <td class="px-4 py-3 text-right"><button class="text-indigo-400 hover:text-indigo-300 font-medium">View</button></td>
+                                        </tr>
+                                        <tr class="hover:bg-slate-900/40 cursor-pointer">
+                                            <td class="px-4 py-3 font-medium">
+                                                <div class="text-slate-100 font-semibold">Lifestyle Departmental</div>
+                                                <div class="text-[10px] text-slate-500">OUT-9022 • Regal Building</div>
+                                            </td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium text-[10px]">LS - Lifestyle</span></td>
+                                            <td class="px-4 py-3 text-slate-400">Yesterday</td>
+                                            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px]"><i class="fa-solid fa-location-dot"></i> 75m Radius</span></td>
+                                            <td class="px-4 py-3 text-right"><button class="text-indigo-400 hover:text-indigo-300 font-medium">View</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Geofence Inspector & Pin View -->
+                        <div class="col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                    <div>
+                                        <h4 class="font-bold text-sm text-slate-100" id="inspect-name">Nykaa Beauty Store</h4>
+                                        <p class="text-xs text-slate-400" id="inspect-code">Code: OUT-8801 | Lat: 28.6315, Lng: 77.2167</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold rounded-full" id="inspect-status">Verified</span>
+                                </div>
+
+                                <!-- Simulated Map Pin View -->
+                                <div class="my-4 h-48 bg-slate-900 rounded-lg border border-slate-800 relative flex items-center justify-center overflow-hidden">
+                                    <!-- Map background effect -->
+                                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                                    
+                                    <!-- Geofence Radius Circle -->
+                                    <div class="w-32 h-32 rounded-full border-2 border-indigo-500/40 bg-indigo-500/10 flex items-center justify-center animate-pulse">
+                                        <div class="w-4 h-4 bg-indigo-500 rounded-full border-2 border-white shadow-lg shadow-indigo-500/50"></div>
+                                    </div>
+                                    <span class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur px-2 py-1 rounded text-[10px] text-slate-300 border border-slate-800">
+                                        Radius: 50 Meters Allowed
+                                    </span>
+                                </div>
+
+                                <div class="space-y-2 text-xs">
+                                    <div class="flex justify-between py-1 border-b border-slate-800/60">
+                                        <span class="text-slate-500">Assigned Sales Rep (SO):</span>
+                                        <span class="text-slate-200 font-medium">Rahul Kumar (Emp #104)</span>
+                                    </div>
+                                    <div class="flex justify-between py-1 border-b border-slate-800/60">
+                                        <span class="text-slate-500">Mapped Distributor:</span>
+                                        <span class="text-slate-200 font-medium">Rajdhani Enterprises (DMS-02)</span>
+                                    </div>
+                                    <div class="flex justify-between py-1">
+                                        <span class="text-slate-500">Preferred Order Days:</span>
+                                        <span class="text-indigo-400 font-medium">Mon, Thu, Sat</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-arrows-rotate"></i> Re-verify GPS Coordinates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: BEAT PLANNING & JOURNEY -->
+                <div id="panel-beat" class="tab-panel hidden space-y-6">
+                    <div class="flex items-center justify-between bg-slate-950 p-4 border border-slate-800 rounded-xl">
+                        <div class="flex items-center gap-4">
+                            <label class="text-xs text-slate-400 font-medium">Select Territory:</label>
+                            <select class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-1.5 focus:outline-none">
+                                <option>Central Delhi - Zone 1</option>
+                                <option>South Delhi - Zone 2</option>
+                            </select>
+                            
+                            <label class="text-xs text-slate-400 font-medium ml-4">Beat Frequency:</label>
+                            <select class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-1.5 focus:outline-none">
+                                <option>Weekly (Bi-Weekly Alternate)</option>
+                                <option>Daily Regular</option>
+                            </select>
+                        </div>
+
+                        <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i> Save Journey Plan
+                        </button>
+                    </div>
+
+                    <!-- Beat Route Sequence Table -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                        <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-sm text-slate-200">Beat Route: Connaught Place Route-A</h3>
+                                <p class="text-xs text-slate-400">Drag or re-order sequence to optimize distance & visit speed</p>
+                            </div>
+                            <span class="text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full font-medium">
+                                8 Outlets Planned Today
+                            </span>
+                        </div>
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-900/60 text-slate-400 border-b border-slate-800 uppercase font-semibold">
+                                <tr>
+                                    <th class="px-4 py-3 w-12">Seq</th>
+                                    <th class="px-4 py-3">Outlet Details</th>
+                                    <th class="px-4 py-3">Category</th>
+                                    <th class="px-4 py-3">Est. Distance</th>
+                                    <th class="px-4 py-3">Status</th>
+                                    <th class="px-4 py-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60">
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-4 py-3 font-bold text-indigo-400">#1</td>
+                                    <td class="px-4 py-3">
+                                        <div class="font-semibold text-slate-100">Nykaa Beauty Store</div>
+                                        <div class="text-[10px] text-slate-500">Block B, CP</div>
+                                    </td>
+                                    <td class="px-4 py-3">EBA Store</td>
+                                    <td class="px-4 py-3 text-slate-400">0.0 km (Start)</td>
+                                    <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-semibold text-[10px]">Completed</span></td>
+                                    <td class="px-4 py-3 text-right"><button class="text-slate-400 hover:text-white"><i class="fa-solid fa-bars"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-indigo-400">#2</td>
+                                    <td class="px-4 py-3">
+                                        <div class="font-semibold text-slate-100">Gupta Cosmetics</div>
+                                        <div class="text-[10px] text-slate-500">Janpath Market</div>
+                                    </td>
+                                    <td class="px-4 py-3">GT Counter</td>
+                                    <td class="px-4 py-3 text-slate-400">1.2 km away</td>
+                                    <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 font-semibold text-[10px]">In-Progress</span></td>
+                                    <td class="px-4 py-3 text-right"><button class="text-slate-400 hover:text-white"><i class="fa-solid fa-bars"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-slate-500">#3</td>
+                                    <td class="px-4 py-3">
+                                        <div class="font-semibold text-slate-300">Lifestyle Departmental</div>
+                                        <div class="text-[10px] text-slate-500">Regal Building</div>
+                                    </td>
+                                    <td class="px-4 py-3">Modern Trade</td>
+                                    <td class="px-4 py-3 text-slate-400">0.8 km away</td>
+                                    <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-medium text-[10px]">Pending</span></td>
+                                    <td class="px-4 py-3 text-right"><button class="text-slate-400 hover:text-white"><i class="fa-solid fa-bars"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TAB 3: IN-STORE VISIT & ORDER WIZARD -->
+                <div id="panel-visit" class="tab-panel hidden space-y-6">
+                    <!-- Step Progress Bar -->
+                    <div class="flex items-center justify-between bg-slate-950 p-4 border border-slate-800 rounded-xl">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center"><i class="fa-solid fa-check"></i></span>
+                            <span class="text-xs font-semibold text-emerald-400">1. Check-In & GPS</span>
+                        </div>
+                        <div class="h-0.5 w-12 bg-indigo-500"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+                            <span class="text-xs font-semibold text-indigo-400">2. Order SKU Selection</span>
+                        </div>
+                        <div class="h-0.5 w-12 bg-slate-800"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 text-xs font-bold flex items-center justify-center">3</span>
+                            <span class="text-xs font-semibold text-slate-500">3. Summary & Check-Out</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Booking Matrix -->
+                    <div class="grid grid-cols-12 gap-6">
+                        <!-- Product Variant Selector -->
+                        <div class="col-span-8 bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <h3 class="font-bold text-sm text-slate-100">Product Catalog (Cosmetics & Lipsticks)</h3>
+                                <input type="text" placeholder="Search SKU / Barcode..." class="bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-1">
+                            </div>
+
+                            <div class="space-y-3">
+                                <!-- SKU Item 1 -->
+                                <div class="flex items-center justify-between p-3 bg-slate-900/60 rounded-lg border border-slate-800">
+                                    <div>
+                                        <div class="text-xs font-semibold text-slate-100">All Day Matte Lipstick - Shade #01 Ruby Red</div>
+                                        <div class="text-[11px] text-slate-400">SKU: VSKU-9920 • Price ex-tax: ₹250.00 • GST: 18%</div>
+                                        <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded mt-1 inline-block">Scheme: Buy 10 Get 1 Free</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex items-center border border-slate-700 rounded bg-slate-950">
+                                            <button class="px-2.5 py-1 text-slate-400 hover:text-white">-</button>
+                                            <span class="px-3 text-xs font-bold text-slate-100">10</span>
+                                            <button class="px-2.5 py-1 text-slate-400 hover:text-white">+</button>
+                                        </div>
+                                        <div class="text-right w-24">
+                                            <div class="text-xs font-bold text-slate-100">₹2,950.00</div>
+                                            <div class="text-[10px] text-slate-500">Incl. Tax</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SKU Item 2 -->
+                                <div class="flex items-center justify-between p-3 bg-slate-900/60 rounded-lg border border-slate-800">
+                                    <div>
+                                        <div class="text-xs font-semibold text-slate-100">Kajal Super-Black Intense 24hr</div>
+                                        <div class="text-[11px] text-slate-400">SKU: VSKU-4411 • Price ex-tax: ₹150.00 • GST: 18%</div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex items-center border border-slate-700 rounded bg-slate-950">
+                                            <button class="px-2.5 py-1 text-slate-400 hover:text-white">-</button>
+                                            <span class="px-3 text-xs font-bold text-slate-100">5</span>
+                                            <button class="px-2.5 py-1 text-slate-400 hover:text-white">+</button>
+                                        </div>
+                                        <div class="text-right w-24">
+                                            <div class="text-xs font-bold text-slate-100">₹885.00</div>
+                                            <div class="text-[10px] text-slate-500">Incl. Tax</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Order Billing Summary -->
+                        <div class="col-span-4 bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-sm text-slate-100 border-b border-slate-800 pb-3">Order Summary</h3>
+                                <div class="space-y-3 py-4 text-xs">
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Total Items & Qty:</span>
+                                        <span class="text-slate-200 font-semibold">2 Lines (15 Qty)</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Gross Ex-Tax Amount:</span>
+                                        <span class="text-slate-200 font-semibold">₹3,250.00</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Total GST (18%):</span>
+                                        <span class="text-slate-200 font-semibold">₹585.00</span>
+                                    </div>
+                                    <div class="flex justify-between text-emerald-400 font-medium">
+                                        <span>Scheme Discount:</span>
+                                        <span>- ₹250.00</span>
+                                    </div>
+                                    <div class="border-t border-slate-800 pt-3 flex justify-between text-sm font-bold text-slate-100">
+                                        <span>Total Payable Value:</span>
+                                        <span class="text-indigo-400 text-base">₹3,585.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-lg shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Book Order & Check-Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: ATTENDANCE & GPS PUNCH -->
+                <div id="panel-attendance" class="tab-panel hidden space-y-6">
+                    <div class="grid grid-cols-12 gap-6">
+                        <!-- Selfie & Punch Form -->
+                        <div class="col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-4">
+                            <h3 class="font-bold text-sm text-slate-100 border-b border-slate-800 pb-3">Daily Field Punch-In</h3>
+                            
+                            <!-- Selfie Capture Box -->
+                            <div class="h-44 bg-slate-900 border border-dashed border-slate-700 rounded-lg flex flex-col items-center justify-center text-slate-500 relative">
+                                <i class="fa-solid fa-camera text-2xl mb-2 text-indigo-400"></i>
+                                <span class="text-xs font-medium">Selfie Geo-Match Verified</span>
+                                <span class="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded mt-1">Score: 98.4% Match</span>
+                            </div>
+
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400">
+                                    <span>Punch Location:</span>
+                                    <span class="text-slate-200 font-medium">Connaught Place, Delhi</span>
+                                </div>
+                                <div class="flex justify-between text-slate-400">
+                                    <span>Distance from Counter:</span>
+                                    <span class="text-emerald-400 font-medium">12 Meters (Valid)</span>
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-3 rounded-lg shadow-lg shadow-indigo-600/20 transition">
+                                Mark Punch-OUT (End Session)
+                            </button>
+                        </div>
+
+                        <!-- Attendance Summary Table -->
+                        <div class="col-span-7 bg-slate-950 border border-slate-800 rounded-xl p-5">
+                            <h3 class="font-bold text-sm text-slate-100 border-b border-slate-800 pb-3">Monthly Attendance Roll-Up</h3>
+                            <table class="w-full text-left text-xs text-slate-300 mt-4">
+                                <thead class="bg-slate-900 text-slate-400 uppercase font-semibold">
+                                    <tr>
+                                        <th class="px-3 py-2">Date</th>
+                                        <th class="px-3 py-2">Status</th>
+                                        <th class="px-3 py-2">In Time</th>
+                                        <th class="px-3 py-2">Out Time</th>
+                                        <th class="px-3 py-2">Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                    <tr>
+                                        <td class="px-3 py-2.5 font-medium">12 Nov 2026</td>
+                                        <td class="px-3 py-2.5"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 font-bold text-[10px] rounded">P - Present</span></td>
+                                        <td class="px-3 py-2.5">09:30 AM</td>
+                                        <td class="px-3 py-2.5">06:15 PM</td>
+                                        <td class="px-3 py-2.5 font-semibold text-slate-100">8.7 hrs</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2.5 font-medium">11 Nov 2026</td>
+                                        <td class="px-3 py-2.5"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 font-bold text-[10px] rounded">P - Present</span></td>
+                                        <td class="px-3 py-2.5">09:45 AM</td>
+                                        <td class="px-3 py-2.5">06:30 PM</td>
+                                        <td class="px-3 py-2.5 font-semibold text-slate-100">8.7 hrs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Simple JavaScript for Tab Switching & Interactivity -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all panels
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
+            // Remove active style from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-b-2', 'border-indigo-500', 'text-indigo-400', 'font-semibold');
+                btn.classList.add('text-slate-400');
+            });
+
+            // Show target panel
+            document.getElementById('panel-' + tabId).classList.remove('hidden');
+            
+            // Highlight active tab button
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('border-b-2', 'border-indigo-500', 'text-indigo-400', 'font-semibold');
+            activeBtn.classList.remove('text-slate-400');
+        }
+
+        function selectOutlet(code, name, geofence) {
+            document.getElementById('inspect-name').innerText = name;
+            document.getElementById('inspect-code').innerText = 'Code: ' + code + ' | Lat: 28.6315, Lng: 77.2167';
+            document.getElementById('inspect-status').innerText = geofence;
+        }
+    </script>
+</body>
+</html>
